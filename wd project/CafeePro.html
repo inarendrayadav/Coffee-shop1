@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up form</title>
+    <link rel="stylesheet" href="cafe.css">
+
+</head>
+<style>
+.khiki{
+    width: 300px;
+    background: none;
+    padding: 65px;
+    padding-top: 80px;
+    margin: 10% auto;
+    text-align: center;
+  
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    
+    
+}
+
+input{
+     padding: 10px;
+   
+     border-radius: 20px;
+     margin: 10px 0;
+     outline: none;
+     border: 1px solid black;
+     width: 100%;
+     background: transparent;
+   
+
+}
+h2{
+    font-size: 200%;
+    color: #1c8abd;
+}
+h1{
+    color: chocolate;
+}
+button{
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: cadetblue;
+    cursor: pointer;
+}
+.sign-b{
+    background-color: rgb(7, 160, 221);
+   
+    
+
+}
+.sign-g{
+    background-color: rgb(58, 184, 58);
+}
+hr{
+    margin-top: 20px;
+    width: 80%;
+}
+.or{
+    background-color: #fff;
+    width: 30px;
+    margin: -19px auto 10px;
+}
+img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    
+}
+a:hover{
+        color: rgb(236, 5, 5);
+       
+    }
+.input-box{
+    color: white;
+     
+}
+::placeholder{
+    color: whitesmoke;
+    
+}
+.errorr{
+    color: red;
+    font-style: oblique;
+    text-align: left;
+    
+}
+
+</style>
+<body background="project/piping_hot_coffee_d.jpg"> 
+ <u> <b> <center> <h1 >WelCome IN Naren's ONline CoffeeShop</h1> </center> </b></u>
+             <div class="khiki" id="form">
+            <img src="project/coffee-icon-4.jpg">
+             <h2>Create an account</h2>
+             <form action=""  onsubmit="return validateform()" >
+             <input type="name" class="input-box"  id="yourname"  placeholder="Your Name"><br><b><p id="errorr" class="errorr"> </p></b>
+             <input type="email" class="input-box"  id="email" placeholder="Your Email ID">
+             <input type="text" class="input-box"  list="cafee" placeholder="Online Payment Mode">
+             <datalist id="cafee">
+                 <option>PhonePay</option>
+                 <option>PayTM</option>
+                 <option>Gpay</option>
+                 <option>WhatsApp Pay</option>
+                 <option>Amazon Pay</option>
+
+             </datalist>
+             <input type="password" class="input-box"  id="pass" placeholder=" Password"><b><p id="error" class="errorr"> </p></b>
+             <input type="password" class="input-box"   id="ppass"  placeholder="Confirm Password"><b><p id="eerror" class="errorr"> </p></b>
+             <a href="caafepro.html">
+             <button type="submit" value="submit" class="sign-b" id="mybutton" >  Sign Up</button>
+            </a>
+             <hr>
+             
+             <p class="or">OR</p>
+          
+             <button type="submit" class="sign-g"  >Login with Google</button>
+            
+             <hr>
+             <p style="color: #fff;">Do you have already an account?<a href="cafepro.html">Sign In</a></p>
+</form>
+
+ </div>
+</body>
+<script>
+
+              let yourname = document.getElementById("yourname");
+              let email = document.getElementById("email");
+              let pass = document.getElementById("pass");
+              let ppass = document.getElementById("ppass");
+              let flag = 1;
+              
+
+              function validateform(){
+                  if(yourname.value == ""){
+                      document.getElementById("errorr").innerHTML = "*Please fill your name!!"
+                      flag = 0;
+                  }
+                  else if(yourname.value.length < 3){
+                      document.getElementById("errorr").innerHTML = "*Your name must contain atleast 4 word!!";
+                      flag = 0;
+                  }else{
+                    document.getElementById("errorr").innerHTML="";
+                    flag = 1;
+                  }
+                  if(pass.value == ""){
+                    document.getElementById("error").innerHTML = "*Please enter password!!";
+                    flag = 0;
+                  }
+                else if(pass.value.length < 5){
+                    document.getElementById("error").innerHTML = "**Your password must contain mini 6 word!!";
+                    flag = 0;
+                  }
+                  
+                  else{
+                    document.getElementById("error").innerHTML="";
+                    flag = 1;
+                  }
+                  if(ppass.value == ""){
+                    document.getElementById("eerror").innerHTML = "*Please enter confirm password!!";
+                    flag = 0;
+                  }
+                  else if(pass.value != ppass.value){
+                    document.getElementById("eerror").innerHTML = "*Password and confirm password should match!!";
+                    flag = 0;
+
+                  }
+                  else{
+                    document.getElementById("eerror").innerHTML="";
+                    flag = 1;
+                  }
+                 if(flag){
+                     return true;
+                 } else{
+                     return false;
+                 
+                 }
+                 
+                 
+              }
+            
+    
+
+
+
+
+    
+</script>
+</html>

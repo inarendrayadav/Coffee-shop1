@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .welcome{
+        margin: 0;
+        padding: 0;
+        font-family: 'consolas';
+    }
+    body{
+        display: flex;
+        align-items: center;
+        background: url(project/bg.jpg);
+        justify-content: center;
+        min-height: 80vh;
+       
+
+    }
+    .welcome{
+        position: relative;
+        -webkit-box-reflect: below -12px linear-gradient(transparent , rgba(0 , 0 , 0, 0.2));
+    }
+    .welcome span{
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        font-size: 4em;
+        text-transform: uppercase;
+        animation: animate 1.2s ease-in-out infinite;
+        animation-delay: calc(0.1s  * var(--i));
+    }
+   @keyframes animate 
+   {
+       0%
+       {
+           transform: translateY(0px);
+       }
+       20%
+       {
+           transform: translateY(-20px);
+       }
+       40% , 100%
+       {
+           transform: translateY(0px);
+       }
+   }
+   
+   ul{
+       position: relative;
+       display: flex;
+       flex-direction: column;
+
+   }
+   ul li{
+       list-style: none;
+   }
+   ul li::before{
+       content: attr(data-text);
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50% , -50%);
+       color: #fff;
+       font-size: 6em;
+       font-weight: 700;
+       pointer-events: none;
+       opacity: 0;
+       letter-spacing: 20px;
+       transition: 0.5s;
+       white-space: nowrap;
+   }
+   ul li:hover::before{
+       opacity: 2;
+       letter-spacing: 0px;
+   }
+    ul li a{
+        position: relative;
+        display: inline-block;
+        padding: 6px 15px;
+        text-decoration: none;
+        background: #2196f3;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        overflow: hidden;
+        transition: 0.5s;
+        z-index: 1;
+    }
+    ul:hover li a{
+        opacity: 0;
+    }
+    ul li a:hover{
+        transform: scale(1.4);
+        z-index: 1000;
+        background: #ff3f81;
+        opacity: 1;
+    }
+    ul li a::before
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 80px;
+        height: 100%;
+        background: linear-gradient(90deg , transparent ,rgba(
+            255,255,255,0.8
+        ) , transparent);
+        transform: skewX(35deg);
+        transition: 0%;
+    }
+    ul li a:hover::before{
+        left: calc(100% + 100px);
+        transition: 0.5s;
+        transition-delay: 0.3s;
+    }
+</style>
+<body>
+    <div class="welcome">
+     <span style="--i:1;">W</span>
+     <span style="--i:2;">e</span>
+     <span style="--i:3;">l</span>
+     <span style="--i:4;">c</span>
+     <span style="--i:5;">o</span>
+     <span style="--i:6;">m</span>
+     <span style="--i:7;">e</span>
+     
+     <span style="--i:8">- i</span>
+     <span style="--i:9">n</span>
+     <span style="--i:10;">- o</span>
+     <span style="--i:11;">u</span>
+     <span style="--i:12;">r</span>
+     <span style="--i:13;">- c</span>
+     <span style="--i:14;">o</span>
+     <span style="--i:15;">f</span>
+     <span style="--i:16;">f</span>
+     <span style="--i:17;">e</span>
+     <span style="--i:18;">e</span>
+     <span style="--i:19;">- s</span>
+     <span style="--i:20;">h</span>
+     <span style="--i:21;">o</span>
+     <span style="--i:22;">p</span>
+    <br>
+    <br>
+    <br>
+   <p style="color: #fff;">Thanks you for joining our coffee shop....we will never let you down</p>
+   <br><br><br><br><br>
+     
+ <div>
+     <ul>
+         <li data-text="Back">
+             <a href="CafeePro.html">Back</a>
+
+         </li >
+         <li data-text="Next"><a href="cafepro.html">Next</a></li>
+         <li data-text="About us"> <a href="#">About us</a> </li>
+     </ul>
+ </div>
+</div>
+
+
+
+
+
+</body>
+</html>
